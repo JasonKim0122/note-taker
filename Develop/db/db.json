@@ -1,6 +1,16 @@
 [
-    {
-        "title":"Test Title",
-        "text":"Test text"
+  null,
+  {
+    "title": "df",
+    "text": "dfdf",
+    "id": {
+      "title": "Test Title",
+      "text": "Test text"
     }
+  },
+  {
+    "title": "dsfs",
+    "text": "sdfsdfsdf",
+    "id": null
+  }
 ]

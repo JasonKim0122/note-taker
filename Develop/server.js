@@ -35,6 +35,34 @@ app.get('*', (req,res) => {
 });
 
 
+//Function to create a new note and store it into an empty array
+function newNote(body, notesArr) {
+    const createNote = body;
+
+    if (!Array.isArray(notesArr))
+        notesArr = [];
+
+    if (notesArr === 0)
+        notesArr.push(0);
+
+    body.id = notesArr[0];
+    notesArr[0]++;
+
+    notesArr.push(createNote);
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify(notesArr, null, 2)
+    );
+
+    return createNote;
+}
+
+app.post('/api/notes', (req,res) => {
+    const createNote = newNote(req.body, savedNotes);
+    res.json(createNote);
+});
+
+
 
 
 
